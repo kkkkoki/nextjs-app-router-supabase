@@ -13,8 +13,6 @@ export default function SupabaseListener({
   const { updateLoginUser } = useStore()
 
   useEffect(() => {
-    console.log('first')
-
     const getUserInfo = async () => {
       const { data } = await supabase.auth.getSession()
       if (data.session) {

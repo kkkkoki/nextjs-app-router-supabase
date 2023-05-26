@@ -14,8 +14,6 @@ export default function Auth() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    console.log(isLogin)
-
     if (isLogin) {
       const { error } = await supabase.auth.signInWithPassword({
         email,
@@ -25,8 +23,6 @@ export default function Auth() {
       setPassword('')
 
       if (error) {
-        console.log('first')
-
         alert(error.message)
       } else {
         router.push('/')
@@ -40,8 +36,6 @@ export default function Auth() {
       setPassword('')
 
       if (error) {
-        console.log('first')
-
         alert(error.message)
       }
     }
